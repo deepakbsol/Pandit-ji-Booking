@@ -3,7 +3,6 @@ server:
 eureka:
   instance:
     prefer-ip-address: true
-
   client:
     register-with-eureka: true
     fetch-registry: true
@@ -17,12 +16,16 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql:true:datasource:
+#      ddl-auto: update
+      show-sql: true
+  datasource:
     url: jdbc:mysql://localhost:3306/pandit_ji_booking
     username: root
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
+    dialect: org.hibernate.dialect.MySQL8Dialect
+
+
 
 
 
